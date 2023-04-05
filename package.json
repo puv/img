@@ -1,29 +1,25 @@
 {
-  "name": "tab",
+  "name": "img",
   "version": "0.0.1",
-  "description": "Unleash the potential of your homepage",
+  "description": "Open-Source Image Hosting Service",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint --ext .ts src",
-    "lint:fix": "npm run lint -- --fix",
     "start": "nodemon --ignore src/public/ --ignore src/views src/index.js",
     "css": "sass --watch src/public/scss:src/public/css --quiet-deps"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/puv/tab.git"
+    "url": "git+https://github.com/puv/img.git"
   },
   "keywords": [
-    "tab",
-    "homepage",
-    "dashboard"
+    "image"
   ],
   "author": "puv",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/puv/tab/issues"
+    "url": "https://github.com/puv/img/issues"
   },
-  "homepage": "https://github.com/puv/tab#readme",
+  "homepage": "https://github.com/puv/img#readme",
   "devDependencies": {
     "dotenv": "^16.0.3",
     "eslint": "^8.33.0",
