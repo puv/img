@@ -31,16 +31,22 @@
   border: 4px dashed #fff;
   display: grid;
 }
-#overlay .upload form p {
+#overlay .upload form input {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  text-align: center;
+  place-self: center;
+  opacity: 0;
+}
+#overlay .upload form label {
+  position: absolute;
   text-align: center;
   color: #ffffff;
   font-family: Arial;
   display: grid;
   place-self: center;
-}
-#overlay .upload form input {
-  position: absolute;
-  opacity: 0;
 }
 #overlay .upload form button {
   margin: 0;

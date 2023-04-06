@@ -1,77 +1,96 @@
 #overlay {
-    background: rgba(0, 0, 0, 0.75);
-    position: absolute;
-    font-family: "Verdana", sans-serif;
-    // pointer-events: none;
-    color: white;
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  font-family: "Verdana", sans-serif;
+  // pointer-events: none;
+  color: white;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  align-content: center;
+  grid-gap: 1em;
+
+  .landing {
     display: grid;
     place-items: center;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    top: 0;
-    align-content: center;
-    grid-gap: 1em;
+    text-align: center;
 
-    .landing {
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+
+  .upload {
+    form {
+      width: 500px;
+      height: 200px;
+      border: 4px dashed #fff;
+      display: grid;
+
+      // ? Deprecated moving to Label instead of paragraph
+      // p {
+      //     text-align: center;
+      //     color: #ffffff;
+      //     font-family: Arial;
+      //     display: grid;
+      //     place-self: center;
+      // }
+
+      input {
+        height: 100%;
+        width: 100%;
+
+        position: relative;
         display: grid;
-        place-items: center;
+
         text-align: center;
+        place-self: center;
 
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
+        opacity: 0;
+      }
+
+      label {
+        position: absolute;
+
+        text-align: center;
+        color: #ffffff;
+        font-family: Arial;
+        display: grid;
+        place-self: center;
+      }
+
+      button {
+        margin: 0;
+        color: #fff;
+        background: #16a085;
+        border: none;
+        width: 508px;
+        height: 35px;
+        margin-top: -20px;
+        margin-left: -4px;
+        border-radius: 4px;
+        border-bottom: 4px solid #117a60;
+        transition: all 0.2s ease;
+        outline: none;
+
+        &:hover {
+          background: #149174;
+          color: #0c5645;
         }
 
-        p {
-            font-size: 1rem;
-            margin: 0;
+        &:active {
+          border: 0;
         }
+      }
     }
-
-    .upload {
-        form {
-            width: 500px;
-            height: 200px;
-            border: 4px dashed #fff;
-            display: grid;
-
-            p {
-                text-align: center;
-                color: #ffffff;
-                font-family: Arial;
-                display: grid;
-                place-self: center;
-            }
-
-            input {
-                position: absolute;
-                opacity: 0;
-            }
-
-            button {
-                margin: 0;
-                color: #fff;
-                background: #16a085;
-                border: none;
-                width: 508px;
-                height: 35px;
-                margin-top: -20px;
-                margin-left: -4px;
-                border-radius: 4px;
-                border-bottom: 4px solid #117a60;
-                transition: all 0.2s ease;
-                outline: none;
-
-                &:hover {
-                    background: #149174;
-                    color: #0c5645;
-                }
-
-                &:active {
-                    border: 0;
-                }
-            }
-        }
-    }
+  }
 }

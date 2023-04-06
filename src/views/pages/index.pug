@@ -8,6 +8,7 @@ block content
             p Welcome to img
         .upload 
             form(method='post')
-                input(type="file")
-                p Drag your files here or click in this area.
+                input#uploader(type="file")
+                label(for="uploader") Drag your files here or click in this area.
     script(type="module" src="js/Skybox.js")
+    script(src="js/uploader.js")
