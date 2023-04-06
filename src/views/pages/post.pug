@@ -1,12 +1,13 @@
 extends ../base/base
 
-// This whole page needs fixing, head no worky atm.
+//- This whole page needs fixing, head no worky atm.
+//- it does work, needs styling tho
 
 mixin Post(id, images)
     .post 
         .images 
             each image in images
-                img(src=image)
+                img(src="/uploads/" + image)
 
 
 block poststyles 

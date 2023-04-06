@@ -5,7 +5,7 @@ const passport = require("passport");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const fileUpload = require('express-fileupload');
+const fileUpload = require("express-fileupload");
 const db = require("./database/database");
 const Routes = require("./routes/_routes.js");
 
@@ -52,6 +52,7 @@ app.use(cookieParser());
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.resolve(__dirname, "../uploads")));
 
 // Middleware Routes
 app.use("/", Routes);
