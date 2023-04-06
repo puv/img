@@ -15,6 +15,9 @@ node_modules/
 # Dist folders
 dist
 
+# Macbook store files
+.DS_Store
+
 # Other
 *.log
 .vscode
