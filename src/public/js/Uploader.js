@@ -17,7 +17,11 @@ function Upload(files) {
     // }
   }
 
-  console.log(formData);
+  console.log(formData.entries());
+
+  for (let pair of formData.entries()) {
+    console.log(pair[1]);
+  }
 
   $.ajax({
     url: "/api/upload",
@@ -26,7 +30,7 @@ function Upload(files) {
     processData: false,
     contentType: false,
     success: (data) => {
-      console.log(data);
+      document.location.href = `/post/${data.postID}`;
     }
   })
 }

@@ -5,6 +5,7 @@ const passport = require("passport");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const fileUpload = require('express-fileupload');
 const db = require("./database/database");
 const Routes = require("./routes/_routes.js");
 
@@ -35,13 +36,21 @@ app.use(
   })
 );
 
+// File Upload
+app.use(fileUpload());
+
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Cookie Parser
 app.use(cookieParser());
+
+// Static Files
 app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware Routes

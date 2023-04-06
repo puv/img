@@ -1,0 +1,21 @@
+body {
+  display: grid;
+  place-items: center;
+}
+
+.post {
+  display: grid;
+  place-items: center;
+}
+.post .images {
+  display: grid;
+  place-items: center;
+  grid-gap: 1em;
+  grid-template-rows: repeat(2, auto);
+}
+.post .images img {
+  max-width: 512px;
+  max-height: 512px;
+}
+
+/*# sourceMappingURL=Post.css.map */

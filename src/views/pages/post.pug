@@ -1,0 +1,20 @@
+extends ../base/base
+
+// This whole page needs fixing, head no worky atm.
+
+mixin Post(id, images)
+    .post 
+        .images 
+            each image in images
+                img(src=image)
+
+
+block poststyles 
+    link(rel="stylesheet", href="css/Post.css")
+
+block content
+    +Post(postID, images)
+
+
+block postscripts
+    script(src="js/Post.js")
