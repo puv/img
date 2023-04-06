@@ -21,3 +21,4 @@ dist
 # Other
 *.log
 .vscode
+test/

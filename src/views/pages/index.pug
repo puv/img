@@ -1,6 +1,10 @@
-block content
+extends ../base/base
+
+block poststyles 
     link(rel="stylesheet", href="css/Skybox.css")
     link(rel="stylesheet", href="css/Index.css")
+
+block content
     #canvas
     #overlay
         .landing 
@@ -10,6 +14,8 @@ block content
             form(method='post')
                 //- #display
                 label(for="uploader") Drag your files here or click in this area.
-                input#uploader(multiple type="file")
+                input#uploader(multiple type="file" accept="image/*" max="5000000")
+    
+block postscripts
     script(type="module" src="js/Skybox.js")
     script(src="js/uploader.js")
