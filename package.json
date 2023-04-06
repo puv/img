@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon --ignore src/public/ --ignore src/views src/index.js",
-    "css": "sass --watch src/public/scss:src/public/css --quiet-deps"
+    "css": "npx sass --watch src/public/scss:src/public/css --quiet-deps"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "mongoose": "^7.0.2",
     "passport": "^0.6.0",
     "path": "^0.12.7",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "sass": "^1.60.0"
   }
 }

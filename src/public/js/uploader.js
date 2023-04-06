@@ -17,9 +17,9 @@ function fileHandler(file, name, type) {
 
     imageDisplay.src = fileReader.result;
 
-    displayContainer.innerHTML = ""; // ! Removing this will allow the website to accept multiple images
+    // displayContainer.innerHTML = ""; // ! Removing this will allow the website to accept multiple images
 
-    displayContainer.appendChild(imageDisplay);
+    // displayContainer.appendChild(imageDisplay);
   };
 }
 

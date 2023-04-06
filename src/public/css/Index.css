@@ -25,21 +25,20 @@
   font-size: 1rem;
   margin: 0;
 }
-#overlay #display {
-  width: 500px;
-  min-height: 20px;
-  max-height: 500px;
-  border: 4px dashed #fff;
-  display: grid;
-}
-#overlay #display img {
-  width: 100%;
-}
 #overlay .upload form {
   width: 500px;
-  height: 200px;
+  min-height: 200px;
   border: 4px dashed #fff;
   display: grid;
+}
+#overlay .upload form #display {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: grid;
+}
+#overlay .upload form #display img {
+  width: 100%;
 }
 #overlay .upload form input {
   height: 100%;
