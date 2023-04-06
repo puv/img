@@ -1,5 +1,6 @@
-# Dependency directories
+# Dependency directories/Dist files
 node_modules/
+package-lock.json
 
 # Optional npm cache directory
 .npm
@@ -17,6 +18,10 @@ dist
 
 # Macbook store files
 .DS_Store
+
+# Spesific to this project 
+# (the uploads file? no one needs to see what nasty images you uploaded during dev)
+uploads/
 
 # Other
 *.log
