@@ -9,6 +9,7 @@ const fileUpload = require("express-fileupload");
 const db = require("./database/database");
 const Routes = require("./routes/_routes.js");
 
+
 dotenv.config();
 
 const app = express();
@@ -52,7 +53,7 @@ app.use(cookieParser());
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/uploads", express.static(path.resolve(__dirname, "~/uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // Middleware Routes
 app.use("/", Routes);

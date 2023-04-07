@@ -7,11 +7,11 @@ mixin Post(id, images)
     .post 
         .images 
             each image in images
-                img(src="/uploads/" + image)
+                img(src=image)
 
 
 block poststyles 
-    link(rel="stylesheet", href="css/Post.css")
+    link(rel="stylesheet", href="/css/Post.css")
 
 block content
     +Post(postID, images)

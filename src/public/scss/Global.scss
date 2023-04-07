@@ -38,4 +38,12 @@
 
 body {
   margin: 0;
+  background-color: var(--color-background-dark);
+  color: var(--color-text);
+  display: grid;
+}
+
+#content {
+  display: grid;
+  place-items: center;
 }

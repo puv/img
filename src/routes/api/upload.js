@@ -11,7 +11,9 @@ router.post("/", (req, res) => {
 
     let files = req.files.file;
 
-    if (typeof files == "object") {
+    console.log(files.length);
+
+    if (files.length === undefined) {
         files = [files];
     }
 

@@ -1,11 +1,13 @@
-body {
-    display: grid;
-    place-items: center;
-}
-
 .post {
     display: grid;
     place-items: center;
+    grid-gap: 1em;
+    max-width: 512px;
+    padding: 1em;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    margin-top: 25px;
+
     .images {
         display: grid;
         place-items: center;
