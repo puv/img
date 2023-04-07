@@ -8,7 +8,7 @@ function Upload(files) {
     if (file.type.split("/")[0] !== "image") return;
     if (file.size > 5000000) return;
     console.log(file);
-    formData.append('file', file);
+    formData.append("file", file);
     console.log(formData);
     // fileReader = new FileReader();
     // fileReader.readAsDataURL(file);
@@ -30,13 +30,12 @@ function Upload(files) {
     processData: false,
     contentType: false,
     success: (data) => {
-      document.location.href = `/post/${data.postID}`;
-    }
-  })
+      document.location.href = `/api/post/${data.postID}`;
+    },
+  });
 }
 
 function fileHandler(file, name, type) {
-
   if (type.split("/")[0] !== "image") {
     // Error occur
     alert("The website only support images, we're working on more.");
