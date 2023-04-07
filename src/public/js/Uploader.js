@@ -1,5 +1,5 @@
 const Input = document.getElementById("file__upload__input");
-const InputOverlay = document.getElementById("file__upload__overlay");
+const FileUpload = document.getElementById("file__upload");
 
 function Upload(files) {
     dataArray = [];
@@ -38,6 +38,6 @@ Input.addEventListener(
     (e) => {
         e.preventDefault();
         e.stopPropagation();
-        InputOverlay.classList.add("active");
+        FileUpload.classList.add("active");
     }
 );

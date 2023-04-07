@@ -3,6 +3,7 @@ extends ../base/base
 block poststyles 
     //- link(rel="stylesheet", href="css/Skybox.css")
     link(rel="stylesheet", href="css/Index.css")
+    link(rel="stylesheet", href="css/Upload.css")
 
 block content
     #canvas
@@ -10,10 +11,14 @@ block content
         .landing 
             h1 img
             p Welcome to img
-        .file__upload
+        #file__upload
             input#file__upload__input(multiple type="file" accept="image/*" max="5000000")
-            #file__upload__overlay
-                img(src="/img/uploading.png", loading="eager", alt="", srcset="").uploading
+            #file__upload__overlay(uploading="true")
+                img(src="/img/uploading.png", loading="eager", alt="", srcset="")
+                h2 Eating up your files...
+                .progress__bar
+                    .progress__fill
+            #file__upload__overlay(uploading="false")
                 label Drag your files here
                 .divider 
                     div 

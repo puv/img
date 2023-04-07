@@ -1,0 +1,136 @@
+#file__upload {
+    width: 500px;
+    height: 250px;
+    border: 4px solid rgba(50, 50, 50, 0.95);
+    background-color: rgba(50, 50, 50, 0.95);
+    border-radius: 10px;
+    grid-template-rows: auto 0px;
+    display: grid;
+    place-items: center;
+
+    #file__upload__input {
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        display: grid;
+        text-align: center;
+        opacity: 0;
+        z-index: 10;
+    }
+
+    #file__upload__overlay {
+        &[uploading="false"] {
+            height: 100%;
+            width: inherit;
+            position: relative;
+            display: grid;
+            text-align: center;
+            grid-template-rows: 1fr min-content 1fr;
+            place-items: center;
+
+            .divider {
+                width: 90%;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                opacity: 0.75;
+
+                div {
+                    width: 100%;
+                    height: 1px;
+                    background: #fff;
+                    margin: 0 auto;
+                }
+            }
+
+            button {
+                color: #fff;
+                background: var(--color-primary-light);
+                border: none;
+                padding: 1em;
+                box-sizing: border-box;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: var(--color-primary-dark);
+                }
+
+                &:active {
+                    border: 0;
+                }
+            }
+        }
+
+        &[uploading="true"] {
+            display: none;
+        }
+    }
+
+    &.active {
+        #file__upload__overlay {
+            &[uploading="false"] {
+                display: none;
+            }
+
+            &[uploading="true"] {
+                display: grid;
+                place-items: center;
+                text-align: center;
+                grid-template-columns: min-content auto;
+                grid-template-rows: auto auto;
+                grid-gap: 1em;
+
+                img {
+                    grid-column: 1;
+                    grid-row: 1 / 3;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin: 0;
+                    text-align: center;
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+
+                .progress__bar {
+                    position: relative;
+                    height: 20px;
+                    width: 200px;
+                    background: white;
+                    border-radius: 25px;
+                    border: 2px solid white;
+                    background-color: transparent;
+
+                    .progress__fill {
+                        position: absolute;
+                        height: 20px;
+                        width: 0%;
+                        animation: progress-forward 3s normal forwards ease-in-out;
+                        background: var(--color-primary-light);
+                        border-radius: 15px;
+                    }
+                }
+            }
+        }
+
+        grid-template-rows: auto;
+    }
+}
+
+@keyframes progress-forward {
+    0% {
+        width: 0%;
+    }
+    10%,
+    30% {
+        width: 10%;
+    }
+    50% {
+        width: 75%;
+    }
+    75%,
+    100% {
+        width: 95%;
+    }
+}
