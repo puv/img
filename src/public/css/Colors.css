@@ -1,0 +1,11 @@
+:host,
+:root {
+  --color-primary-light: rgb(3, 255, 167);
+  --color-primary-dark: rgb(50, 120, 95);
+  --color-background-light: rgb(50, 50, 50);
+  --color-background-dark: rgb(50, 50, 50);
+  --color-text: #ffffff;
+  --color-text-secondary: #ffffff;
+}
+
+/*# sourceMappingURL=Colors.css.map */

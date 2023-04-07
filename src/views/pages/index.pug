@@ -1,7 +1,7 @@
 extends ../base/base
 
 block poststyles 
-    link(rel="stylesheet", href="css/Skybox.css")
+    //- link(rel="stylesheet", href="css/Skybox.css")
     link(rel="stylesheet", href="css/Index.css")
 
 block content
@@ -10,12 +10,17 @@ block content
         .landing 
             h1 img
             p Welcome to img
-        .upload 
-            form(method='post')
-                //- #display
-                label(for="uploader") Drag your files here or click in this area.
-                input#uploader(multiple type="file" accept="image/*" max="5000000")
+        .file__upload
+            input#file__upload__input(multiple type="file" accept="image/*" max="5000000")
+            #file__upload__overlay
+                .uploading
+                label(for="uploader") Drag your files here
+                .divider 
+                    div 
+                    | OR
+                    div
+                button(type="button" for="uploader" onclick="document.getElementById('uploader').click();") Click to Upload
     
 block postscripts
-    script(type="module" src="js/Skybox.js")
+    //- script(type="module" src="js/Skybox.js")
     script(src="js/Uploader.js")

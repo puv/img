@@ -1,4 +1,5 @@
-const Uploader = document.getElementById("uploader");
+const Input = document.getElementById("file__upload__input");
+const InputOverlay = document.getElementById("file__upload__overlay");
 
 function Upload(files) {
     dataArray = [];
@@ -35,29 +36,15 @@ function Upload(files) {
     });
 }
 
-function fileHandler(file, name, type) {
-    if (type.split("/")[0] !== "image") {
-        // Error occur
-        alert("The website only support images, we're working on more.");
-
-        return false;
-    }
-
-    const fileReader = new FileReader();
-
-    fileReader.readAsDataURL(file);
-    fileReader.onloadend = () => {
-        const displayContainer = document.getElementById("display");
-        const imageDisplay = document.createElement("img");
-
-        imageDisplay.src = fileReader.result;
-
-        // displayContainer.innerHTML = ""; // ! Removing this will allow the website to accept multiple images
-
-        // displayContainer.appendChild(imageDisplay);
-    };
-}
-
-Uploader.addEventListener("change", () => {
-    Upload(Uploader.files);
+Input.addEventListener("change", () => {
+    Upload(Input.files);
 });
+
+Input.addEventListener(
+    "dragover",
+    (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        InputOverlay.classList.add("active");
+    }
+);
