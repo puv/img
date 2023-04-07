@@ -13,13 +13,13 @@ block content
         .file__upload
             input#file__upload__input(multiple type="file" accept="image/*" max="5000000")
             #file__upload__overlay
-                .uploading
-                label(for="uploader") Drag your files here
+                img(src="/img/uploading.png", loading="eager", alt="", srcset="").uploading
+                label Drag your files here
                 .divider 
                     div 
                     | OR
                     div
-                button(type="button" for="uploader" onclick="document.getElementById('uploader').click();") Click to Upload
+                button(type="button") Click to Upload
     
 block postscripts
     //- script(type="module" src="js/Skybox.js")

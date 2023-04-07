@@ -31,7 +31,7 @@ function Upload(files) {
         processData: false,
         contentType: false,
         success: (data) => {
-            document.location.href = `/api/post/${data.postID}`;
+            document.location.href = `/post/${data.postID}`; // API pages are strictly for JSON responses, so we redirect to the post page
         },
     });
 }
