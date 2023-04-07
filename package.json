@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/puv/img#readme",
   "devDependencies": {
+    "babel-plugin-root-import": "^6.6.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.37.0",
     "nodemon": "^2.0.20"

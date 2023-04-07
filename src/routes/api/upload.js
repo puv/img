@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const Post = require("../../database/models/Post");
+const Post = require("~/database/models/Post");
 const fs = require("fs");
 
-const { generateRandomString } = require("../../functions");
+const { generateRandomString } = require("~/functions");
 
 router.post("/", (req, res) => {
     if (!req.files || Object.keys(req.files).length === 0) {

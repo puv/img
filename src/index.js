@@ -52,7 +52,7 @@ app.use(cookieParser());
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/uploads", express.static(path.resolve(__dirname, "../uploads")));
+app.use("/uploads", express.static(path.resolve(__dirname, "~/uploads")));
 
 // Middleware Routes
 app.use("/", Routes);
