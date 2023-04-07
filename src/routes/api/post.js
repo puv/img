@@ -1,5 +1,5 @@
 const Router = require("express").Router;
-const Post = require("~/database/models/Post");
+const Post = require("../../database/models/Post");
 const router = Router();
 
 router.get("/:id", (req, res) => {
