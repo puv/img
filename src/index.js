@@ -15,12 +15,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 db.init()
-  .then(async () => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    .then(async () => {
+        console.log("Connected to MongoDB");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -29,11 +29,11 @@ app.set("trust proxy", true);
 // app.use(flash());
 
 app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "secret",
-    resave: false,
-    saveUninitialized: false,
-  })
+    session({
+        secret: process.env.SESSION_SECRET || "secret",
+        resave: false,
+        saveUninitialized: false,
+    })
 );
 
 // File Upload
@@ -58,5 +58,5 @@ app.use("/uploads", express.static(path.resolve(__dirname, "../uploads")));
 app.use("/", Routes);
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port ${PORT}`);
 });

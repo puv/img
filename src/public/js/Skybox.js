@@ -1,8 +1,8 @@
-import * as THREE from './three.module.js';
-import { OrbitControls } from './OrbitControls.js';
+import * as THREE from "./three.module.js";
+import { OrbitControls } from "./OrbitControls.js";
 
 // Select the container for the scene
-const container = document.getElementById('canvas');
+const container = document.getElementById("canvas");
 
 // Create the scene, camera, and renderer
 const scene = new THREE.Scene();
@@ -14,7 +14,7 @@ container.appendChild(renderer.domElement);
 
 // Load the panoramic image and create a texture
 const loader = new THREE.TextureLoader();
-const texture = loader.load('./img/skybox.jfif');
+const texture = loader.load("./img/skybox.jfif");
 
 // Create a spherical geometry and map the texture to it
 const geometry = new THREE.SphereGeometry(500, 60, 40);
@@ -44,7 +44,7 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-window.addEventListener('resize', onWindowResize, false);
+window.addEventListener("resize", onWindowResize, false);
 
 // Animation loop
 let lastTime = 0;
