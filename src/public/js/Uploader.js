@@ -1,7 +1,9 @@
 const Input = document.getElementById("file__upload__input");
 const FileUpload = document.getElementById("file__upload");
+const ProgressBar = document.getElementById("progress__bar");
 
 function Upload(files) {
+    ProgressBar.classList.add("active");
     dataArray = [];
     const formData = new FormData();
 

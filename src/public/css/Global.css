@@ -23,11 +23,14 @@ body {
   background-color: var(--color-background-dark);
   color: var(--color-text);
   display: grid;
+  font-family: "Verdana", sans-serif;
 }
 
 #content {
   display: grid;
   place-items: center;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=Global.css.map */

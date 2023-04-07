@@ -67,7 +67,7 @@
   place-items: center;
   text-align: center;
   grid-template-columns: min-content auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 1em;
 }
 #file__upload.active #file__upload__overlay[uploading=true] img {
@@ -81,7 +81,7 @@
   grid-column: 2;
   grid-row: 1;
 }
-#file__upload.active #file__upload__overlay[uploading=true] .progress__bar {
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar {
   position: relative;
   height: 20px;
   width: 200px;
@@ -89,8 +89,12 @@
   border-radius: 25px;
   border: 2px solid white;
   background-color: transparent;
+  display: none;
 }
-#file__upload.active #file__upload__overlay[uploading=true] .progress__bar .progress__fill {
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar.active {
+  display: block;
+}
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar .progress__fill {
   position: absolute;
   height: 20px;
   width: 0%;
@@ -104,7 +108,7 @@
     width: 0%;
   }
   10%, 30% {
-    width: 10%;
+    width: 70%;
   }
   50% {
     width: 75%;

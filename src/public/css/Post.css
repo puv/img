@@ -1,22 +1,45 @@
+#content {
+  grid-template-columns: 2fr 1fr;
+  place-items: unset;
+}
+
 .post {
   display: grid;
-  place-items: center;
   grid-gap: 1em;
-  max-width: 512px;
   padding: 1em;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.25);
-  margin-top: 25px;
+  grid-column: 1;
+  grid-template-columns: auto max-content;
 }
 .post .images {
+  width: 100%;
+  grid-column: 1;
   display: grid;
   place-items: center;
   grid-gap: 1em;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(auto-fill, 512px);
+  grid-template-columns: repeat(auto-fill, 512px);
 }
 .post .images img {
   max-width: 512px;
   max-height: 512px;
+}
+.post .info .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.post .info .description {
+  font-size: 1rem;
+  margin: 0;
+}
+.post .info .author {
+  font-size: 0.75rem;
+  margin: 0;
+}
+.post .info .author::before {
+  content: "By ";
 }
 
 /*# sourceMappingURL=Post.css.map */

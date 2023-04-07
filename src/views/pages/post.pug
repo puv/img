@@ -8,6 +8,10 @@ mixin Post(id, images)
         .images 
             each image in images
                 img(src=image)
+        .info
+            .title Title 
+            .description Description
+            .author Author
 
 
 block poststyles 
