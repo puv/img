@@ -1,0 +1,15 @@
+link(rel="stylesheet", href="/css/Auth.css")
+
+- if (user)
+    button.btn
+        .dropdown.dropdown-hover
+            .avatar
+                .w-8.rounded-full
+                    img(src="https://cdn.discordapp.com/avatars/" + user.userID + "/" + user.profile.avatar + ".gif")
+            label.m-4(tabindex='0')= user.profile.username
+            ul.dropdown-content.menu.p-2.shadow.bg-base-100.rounded-box.w-52(tabindex='0')
+                li
+                    a(href="/api/auth") Log out
+
+- else
+    button.btn.btn-info(onclick="window.location.href='/api/auth'") Log in via Discord

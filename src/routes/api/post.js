@@ -11,6 +11,9 @@ router.get("/:id", (req, res) => {
                 return res.render("pages/post", {
                     postID: req.params.id,
                     images: post.images,
+                    info: {
+                        author: req.session.passport ? req.session.passport.user.id : null,
+                    }
                 });
             }
         })

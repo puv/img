@@ -1,0 +1,15 @@
+include auth
+
+.navbar.bg-base-300.rounded-box
+  .flex-1.px-2(class='lg:flex-none')
+    a.text-lg.font-bold daisyUI
+  .flex.justify-end.flex-1.px-2
+    .flex.items-stretch
+      a.btn.btn-ghost.rounded-btn Button
+      .dropdown.dropdown-end
+        label.btn.btn-ghost.rounded-btn(tabindex='0') Dropdown
+        ul.menu.dropdown-content.p-2.shadow.bg-base-100.rounded-box.w-52.mt-4(tabindex='0')
+          li
+            a Item 1
+          li
+            a Item 2

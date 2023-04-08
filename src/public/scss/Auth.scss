@@ -1,0 +1,13 @@
+.btn {
+    height: auto;
+
+    .dropdown {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        .dropdown-content {
+            top: 50px;
+        }
+    }
+}

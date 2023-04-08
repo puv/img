@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const User = require("./models/User");
+const Post = require("./models/Post");
 
 dotenv.config();
 
@@ -18,24 +19,13 @@ const db = {
         _db = instance.connection.db;
         console.log("Database Initialized");
 
-        if (_db.listCollections({ name: "users" }).hasNext()) {
-            console.log("Collection USERS exists");
-        } else {
-            console.log("Collection USERS does not exist");
-
-            const user = new User();
-
-            user.save(function (error) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log("User created successfully!");
-                }
-            });
-        }
+        if (!_db.listCollections({ name: "users" }).hasNext()) new User().save();
+        if (!_db.listCollections({ name: "posts" }).hasNext()) new Post().save();
 
         let userCount = await User.countDocuments();
+        let postCount = await Post.countDocuments();
         console.log(`Table USERS Loaded: ${userCount} results`);
+        console.log(`Table POSTS Loaded: ${postCount} results`);
         return _db;
     }
 }

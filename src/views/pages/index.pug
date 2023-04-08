@@ -4,6 +4,7 @@ block poststyles
     //- link(rel="stylesheet", href="css/Skybox.css")
     link(rel="stylesheet", href="css/Index.css")
     link(rel="stylesheet", href="css/Upload.css")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css", type="text/css")
 
 block content
     #canvas
@@ -11,21 +12,10 @@ block content
         .landing 
             h1 img
             p Welcome to img
-        #file__upload
-            input#file__upload__input(multiple type="file" accept="image/*" max="5000000")
-            #file__upload__overlay(uploading="true")
-                img(src="/img/uploading.png", loading="eager", alt="", srcset="")
-                h2 Eating up your files...
-                #progress__bar
-                    .progress__fill
-            #file__upload__overlay(uploading="false")
-                label Drag your files here
-                .divider 
-                    div 
-                    | OR
-                    div
-                button(type="button") Click to Upload
+        include ../partials/auth
+        include ../partials/upload
     
 block postscripts
     //- script(type="module" src="js/Skybox.js")
+    script(src="https://cdn.tailwindcss.com")
     script(src="js/Uploader.js")

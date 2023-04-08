@@ -1,0 +1,12 @@
+#file__upload
+    input#file__upload__input(multiple type="file" accept="image/*" max="5000000")
+    #file__upload__overlay(uploading="true")
+        img(src="/img/uploading.png", loading="eager", alt="", srcset="")
+        h2 Eating up your files...
+        #progress__bar
+            .progress__fill
+    #file__upload__overlay(uploading="false")
+        .grid.h-20.card.rounded-box.place-items-center Drag your files here
+        .divider OR
+        .grid.h-20.card.rounded-box.place-items-center 
+            button.btn(type="button") Click to Upload

@@ -1,0 +1,13 @@
+.btn {
+  height: auto;
+}
+.btn .dropdown {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.btn .dropdown .dropdown-content {
+  top: 50px;
+}
+
+/*# sourceMappingURL=Auth.css.map */

@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const db = require("./database/database");
 const Routes = require("./routes/_routes.js");
+require("./strategies/discord");
 
 
 dotenv.config();
