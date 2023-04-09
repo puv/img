@@ -36,6 +36,7 @@
     "moment-duration-format": "^2.3.2",
     "mongoose": "^7.0.2",
     "passport": "^0.6.0",
+    "passport-discord": "^0.1.4",
     "path": "^0.12.7",
     "pug": "^3.0.2",
     "sass": "^1.60.0"
