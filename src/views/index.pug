@@ -13,12 +13,13 @@ html(lang='en')
         meta(name="revisit-after", content="30 days")
         META(NAME="ROBOTS", CONTENT="INDEX, FOLLOW")
         block prestyles
-        link(rel='stylesheet' href='/css/Colors.css')
-        link(rel='stylesheet' href='/css/Global.css')
         link(rel='stylesheet' href='https://use.fontawesome.com/releases/v6.3.0/css/all.css')
+        link(rel='stylesheet' href='/css/Style.css')
         block poststyles
         block prescripts
-        script(src='')
+        script(src='/js/Loader.js')
+        script(src="/js/Uploader.js")
+        script(src="/js/Skybox.js") 
         script(src='https://use.fontawesome.com/releases/v6.3.0/js/all.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
     block body
@@ -27,8 +28,8 @@ html(lang='en')
                 include ../partials/navigation.pug
             #content
                 block content
+            #overlay 
+                block overlay
             block footer
                 include ../partials/footer.pug
     block postscripts
-    script.
-        Loader()

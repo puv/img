@@ -1,0 +1,292 @@
+.btn {
+  height: auto;
+}
+.btn .dropdown {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.btn .dropdown .dropdown-content {
+  top: 50px;
+}
+
+:host,
+:root {
+  --color-primary-light: rgb(3, 255, 167);
+  --color-primary-dark: rgb(50, 120, 95);
+  --color-background-light: rgb(50, 50, 50);
+  --color-background-dark: rgb(50, 50, 50);
+  --color-text: #ffffff;
+  --color-text-secondary: #ffffff;
+}
+
+.link-button {
+  --c: #1095c1; /* the color */
+  --s: 0.15em;
+  line-height: 1.1em;
+  padding-bottom: calc(2.1 * var(--s));
+  background: conic-gradient(from 135deg at top, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left 0 bottom var(--s)/calc(2 * var(--s)) var(--s) repeat-x, conic-gradient(from -45deg at bottom, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left var(--s) bottom 0/calc(2 * var(--s)) var(--s) repeat-x;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
+  transition: 0.5s;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.link-button, .link-button:active, .link-button:link, .link-button:visited {
+  color: #bababa;
+  text-decoration: none;
+}
+.link-button:hover {
+  --_p: 100%;
+  color: var(--c);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background-dark);
+  color: var(--color-text);
+  display: grid;
+  font-family: "Verdana", sans-serif;
+}
+
+#content {
+  display: grid;
+  place-items: center;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+#overlay {
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  color: white;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  align-content: center;
+  grid-gap: 1em;
+}
+#overlay .landing {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+#overlay .landing h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+#overlay .landing p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+#content {
+  grid-template-columns: 2fr 1fr;
+  place-items: unset;
+}
+
+.post {
+  display: grid;
+  grid-gap: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  grid-column: 1;
+  grid-template-columns: auto max-content;
+}
+.post .images {
+  width: 100%;
+  grid-column: 1;
+  display: grid;
+  place-items: center;
+  grid-gap: 1em;
+  grid-template-rows: repeat(auto-fill, 512px);
+  grid-template-columns: repeat(auto-fill, 512px);
+}
+.post .images img {
+  max-width: 512px;
+  max-height: 512px;
+}
+.post .info .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.post .info .description {
+  font-size: 1rem;
+  margin: 0;
+}
+.post .info .author {
+  font-size: 0.75rem;
+  margin: 0;
+}
+.post .info .author::before {
+  content: "By ";
+}
+
+.overlay {
+  position: absolute;
+  bottom: 1em;
+  padding: 3em;
+  font-family: "Bebas Neue";
+  pointer-events: none;
+  color: white;
+}
+.overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+.overlay p {
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  margin: 0;
+  width: 50%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+canvas::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 52%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#file__upload {
+  width: 500px;
+  height: 250px;
+  border: 4px solid rgba(50, 50, 50, 0.95);
+  background-color: rgba(50, 50, 50, 0.95);
+  border-radius: 10px;
+  grid-template-rows: auto 0px;
+  display: grid;
+  place-items: center;
+}
+#file__upload #file__upload__input {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  display: grid;
+  text-align: center;
+  opacity: 0;
+  z-index: 10;
+}
+#file__upload #file__upload__overlay[uploading=false] {
+  height: 100%;
+  width: inherit;
+  position: relative;
+  display: grid;
+  text-align: center;
+  grid-template-rows: 1fr min-content 1fr;
+  place-items: center;
+}
+#file__upload #file__upload__overlay[uploading=false] .divider {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  opacity: 0.75;
+}
+#file__upload #file__upload__overlay[uploading=false] .divider div {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  margin: 0 auto;
+}
+#file__upload #file__upload__overlay[uploading=false] button {
+  color: #fff;
+  background: var(--color-primary-light);
+  border: none;
+  padding: 1em;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+#file__upload #file__upload__overlay[uploading=false] button:hover {
+  background: var(--color-primary-dark);
+}
+#file__upload #file__upload__overlay[uploading=false] button:active {
+  border: 0;
+}
+#file__upload #file__upload__overlay[uploading=true] {
+  display: none;
+}
+#file__upload.active {
+  grid-template-rows: auto;
+}
+#file__upload.active #file__upload__overlay[uploading=false] {
+  display: none;
+}
+#file__upload.active #file__upload__overlay[uploading=true] {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  grid-template-columns: min-content auto;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1em;
+}
+#file__upload.active #file__upload__overlay[uploading=true] img {
+  grid-column: 1;
+  grid-row: 1/3;
+}
+#file__upload.active #file__upload__overlay[uploading=true] h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar {
+  position: relative;
+  height: 20px;
+  width: 200px;
+  background: white;
+  border-radius: 25px;
+  border: 2px solid white;
+  background-color: transparent;
+  display: none;
+}
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar.active {
+  display: block;
+}
+#file__upload.active #file__upload__overlay[uploading=true] #progress__bar .progress__fill {
+  position: absolute;
+  height: 20px;
+  width: 0%;
+  animation: progress-forward 3s normal forwards ease-in-out;
+  background: var(--color-primary-light);
+  border-radius: 15px;
+}
+
+@keyframes progress-forward {
+  0% {
+    width: 0%;
+  }
+  10%, 30% {
+    width: 70%;
+  }
+  50% {
+    width: 75%;
+  }
+  75%, 100% {
+    width: 95%;
+  }
+}
+
+/*# sourceMappingURL=Style.css.map */
